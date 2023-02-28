@@ -4,63 +4,83 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        .checkbox-item{
+        .checkbox-item {
+            display: block;
             margin-top: 10px;
             padding: 10px;
             border: 3px solid black;
             background: teal;
         }
 
-        .checkbox-item.active{
+        .checkbox-item.active {
             background: cornflowerblue;
         }
 
-        .list-item{
+        .list-item {
+            display: none;
             background: aqua;
             margin-top: 10px;
             padding: 10px;
             border: 3px solid black;
+            justify-content: space-between;
         }
 
-        .list-item.active{
+        .list-item.active {
+            display: flex;
             background: cornflowerblue;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    Чекбоксы
-<div class="checkbox" >
-    <div class="checkbox-item">
-        <input type="checkbox" id="scales1" name="scales1">
-        <label for="scales1">Scales1</label>
-    </div>
-    <div class="checkbox-item">
-        <input type="checkbox" id="scales2" name="scales2">
-        <label for="scales2">Scales2</label>
-    </div>
-    <div class="checkbox-item">
-        <input type="checkbox" id="scales3" name="scales3">
-        <label for="scales3">Scales3</label>
-    </div>
-    <div class="checkbox-item">
-        <input type="checkbox" id="scales4" name="scales4">
-        <label for="scales4">Scales4</label>
-    </div>
-    <div class="checkbox-item">
-        <input type="checkbox" id="scales5" name="scales5">
-        <label for="scales5">Scales5</label>
+    <h2>Список</h2>
+    <div class="list">
+        <div class="list-item">
+            <div>Lorem ipsum1</div>
+            <button>Удалить</button>
+        </div>
+        <div class="list-item">
+            <div>Lorem ipsum2</div>
+            <button>Удалить</button>
+        </div>
+        <div class="list-item">
+            <div>Lorem ipsum3</div>
+            <button>Удалить</button>
+        </div>
+        <div class="list-item">
+            <div>Lorem ipsum4</div>
+            <button>Удалить</button>
+        </div>
+        <div class="list-item">
+            <div>Lorem ipsum5</div>
+            <button>Удалить</button>
+        </div>
     </div>
 
-</div>
-    Список
-    <div class="list">
-        <div class="list-item">Lorem ipsum1</div>
-        <div class="list-item">Lorem ipsum2</div>
-        <div class="list-item">Lorem ipsum3</div>
-        <div class="list-item">Lorem ipsum4</div>
-        <div class="list-item">Lorem ipsum5</div>
+    <h2>Чекбоксы</h2>
+    <div class="checkbox">
+        <label class="checkbox-item" for="scales1">
+            <input checked type="checkbox" id="scales1" name="scales1">
+            <span>Scales1</span>
+        </label>
+        <label class="checkbox-item" for="scales2">
+            <input checked type="checkbox" id="scales2" name="scales2">
+            <span>Scales2</span>
+        </label>
+        <label class="checkbox-item" for="scales3">
+            <input type="checkbox" id="scales3" name="scales3">
+            <span>Scales3</span>
+        </label>
+        <label class="checkbox-item" for="scales4">
+            <input type="checkbox" id="scales4" name="scales4">
+            <span>Scales4</span>
+        </label>
+        <label class="checkbox-item" for="scales5">
+            <input type="checkbox" id="scales5" name="scales5">
+            <span>Scales5</span>
+        </label>
     </div>
+
 
 </div>
 <script src="main.js"></script>

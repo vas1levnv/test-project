@@ -10,24 +10,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.addEventListener('change', () => {
                     this.selectedCheckboxItem = item
                     this.selectedListItem = this.list[index]
-                    dropdown.onSelectedItems()
+                    this.onSelectedItems()
                 })
             })
         },
 
         onList() {
             this.list.forEach((item, index) => {
-                item.addEventListener('click', () => {
+                item.children[1].addEventListener('click', () => {
                     this.selectedListItem = item
                     this.selectedCheckboxItem = this.checkbox[index]
-                    if(!this.checkbox[index].children[0].checked){
+                    if (!this.checkbox[index].children[0].checked) {
                         this.checkbox[index].children[0].checked = true
-                    } else{
+                    } else {
                         this.checkbox[index].children[0].checked = false
                     }
-                    dropdown.onSelectedItems()
+                    this.onSelectedItems()
                 })
             })
+        },
+        initCheckbox() {
+            this.checkbox.forEach((item, index) => {
+                if (item.children[0].checked) {
+                    this.selectedCheckboxItem = item
+                    this.selectedListItem = this.list[index]
+                    this.onSelectedItems()
+                }
+            })
+
+            this.checkbox[0].children[0].checked ? console.log('yes') : console.log('false')
+            //console.log(this.checkbox[0].children[0])
         },
         onSelectedItems() {
             this.selectedCheckboxItem.classList.toggle('active')
@@ -35,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    dropdown.initCheckbox()
     dropdown.onCheckbox()
     dropdown.onList()
 
